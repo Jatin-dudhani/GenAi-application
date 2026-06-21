@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SmolLM Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+
+    <button
+      class="new-chat"
+      onclick="clearChat()">
+      + New Chat
+    </button>
+
+    <div class="sidebar-footer">
+      SmolLM2 Local AI
+    </div>
+
+  </aside>
+
+  <main class="chat-area">
+
+    <div id="messages" class="messages">
+        <div class="welcome">
+            <h1>SmolLM2</h1>
+            <p>How can I help you today?</p>
+        </div>
+    </div>
+
+    <div class="input-area">
+
+      <textarea
+        id="prompt"
+        placeholder="Message SmolLM2..."
+        rows="1">
+      </textarea>
+
+      <button
+        id="sendBtn"
+        onclick="sendMessage()">
+        ↑
+      </button>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
