@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>SmolLM Chat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,10 +16,13 @@
   <aside class="sidebar">
 
     <button
-      class="new-chat"
-      onclick="clearChat()">
+      id="newChat"
+      class="new-chat">
       + New Chat
     </button>
+
+    <div id="chatList">
+    </div>
 
     <div class="sidebar-footer">
       SmolLM2 Local AI
@@ -29,10 +33,10 @@
   <main class="chat-area">
 
     <div id="messages" class="messages">
-        <div class="welcome">
-            <h1>SmolLM2</h1>
-            <p>How can I help you today?</p>
-        </div>
+      <div class="welcome">
+        <h1>SmolLM2</h1>
+        <p>How can I help you today?</p>
+      </div>
     </div>
 
     <div class="input-area">
@@ -40,21 +44,48 @@
       <textarea
         id="prompt"
         placeholder="Message SmolLM2..."
-        rows="1">
-      </textarea>
+        rows="1"></textarea>
 
       <button
         id="sendBtn"
-        onclick="sendMessage()">
-        ↑
+        type="button">
+        &uarr;
       </button>
 
     </div>
 
   </main>
 
+  <aside
+    id="codePanel"
+    class="code-panel"
+    hidden>
+    <div class="code-panel-header">
+      <div>
+        <p class="code-panel-label">Code workspace</p>
+        <h2>Snippets</h2>
+      </div>
+
+      <button
+        id="copyAllCode"
+        class="panel-button"
+        type="button">
+        Copy all
+      </button>
+    </div>
+
+    <div
+      id="codeList"
+      class="code-list"
+      aria-live="polite">
+    </div>
+  </aside>
+
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="app.js"></script>
 
 </body>
